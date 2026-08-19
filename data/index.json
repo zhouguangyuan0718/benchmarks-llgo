@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-19T02:23:36.404964Z",
+  "runs": [
+    {
+      "key": "cf91afb98fca979c5195751554b67ec75f8c71d6",
+      "id": "32205498156",
+      "attempt": 1,
+      "number": 1,
+      "createdAt": "2026-08-19T02:23:34.655814Z",
+      "sourceCommit": "48caeec746c630aead4a582723f53396ef180dd0",
+      "ref": "main",
+      "llgoRepository": "xgo-dev/llgo",
+      "llgoCommit": "cf91afb98fca979c5195751554b67ec75f8c71d6",
+      "goVersion": "1.26.2",
+      "llvmVersion": "19",
+      "workflowUrl": "https://github.com/zhouguangyuan0718/benchmarks-llgo/actions/runs/32205498156",
+      "path": "runs/cf91afb98fca979c5195751554b67ec75f8c71d6/results.json",
+      "commitUrl": "https://github.com/xgo-dev/llgo/commit/cf91afb98fca979c5195751554b67ec75f8c71d6",
+      "pullRequestResolved": true,
+      "pullRequestNumber": 2359,
+      "pullRequestUrl": "https://github.com/xgo-dev/llgo/pull/2359",
+      "pullRequestTitle": "build: align alternate runtime Go toolchain"
+    }
+  ],
+  "benchmarkNames": [
+    "Aws_restjson",
+    "Dustin_humanize",
+    "Etcdctl",
+    "Gorm_schema",
+    "K8s_workqueue",
+    "Toml",
+    "Uber_zap",
+    "XGo"
+  ]
+}
