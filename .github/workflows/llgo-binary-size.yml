@@ -268,11 +268,13 @@ jobs:
             -o Acquire::https::Timeout=30
             -o DPkg::Lock::Timeout=60
           )
+          ci/llgo-size/setup-llvm-apt.sh
           time_command "APT package index update" \
             sudo timeout --kill-after=30s 5m apt-get "${apt_options[@]}" update
           time_command "APT package installation" \
             sudo timeout --kill-after=30s 15m apt-get "${apt_options[@]}" install -y \
-              cmake clang-${LLVM_VERSION} lld-${LLVM_VERSION} llvm-${LLVM_VERSION}-dev ninja-build \
+              cmake "clang-${LLVM_VERSION}" "lld-${LLVM_VERSION}" \
+              "llvm-${LLVM_VERSION}-dev" ninja-build \
               libuv1-dev libgc-dev libffi-dev
       - name: Check out pinned LLGo
         run: |

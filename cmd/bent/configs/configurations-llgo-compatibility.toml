@@ -4,7 +4,7 @@
   Name = "Go"
   Root = "$GOROOT"
   UseBuildCache = true
-  RunWrapper = ["testjson"]
+  RunWrapper = ["testjson", "--timeout", "6m"]
   RunFlags = ["-test.v=test2json", "-test.short", "-test.count=1", "-test.timeout=5m"]
 
 [[Configurations]]
@@ -13,5 +13,5 @@
   Root = "$GOROOT"
   OmitVetFlag = true
   UseBuildCache = true
-  RunWrapper = ["testjson"]
+  RunWrapper = ["testjson", "--timeout", "6m"]
   RunFlags = ["-test.v=test2json", "-test.short", "-test.count=1", "-test.timeout=5m"]
