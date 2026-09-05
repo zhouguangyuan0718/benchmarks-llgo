@@ -38,6 +38,8 @@ compiler integration remains covered. The workflow stores a Markdown summary
 and TSV result as an artifact. The summary also contains Bent's native per-case
 build timings; `build-times.tsv`, `timing-summary.md`, `download-timings.log`,
 and raw `.build` files are retained for diagnosing slow downloads or builds.
+The pinned LLVM toolchain is installed from the versioned apt.llvm.org
+repository after its signing-key fingerprint is checked.
 The dashboard treats Bent's `user + sys` time as the comparable build-time
 metric. Wall time remains visible as a reference because concurrent builds and
 runner scheduling can make it unsuitable for commit-to-commit comparisons.

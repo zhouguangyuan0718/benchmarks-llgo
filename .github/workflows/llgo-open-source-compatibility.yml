@@ -99,9 +99,10 @@ jobs:
             -o Acquire::https::Timeout=30
             -o DPkg::Lock::Timeout=60
           )
+          ci/llgo-size/setup-llvm-apt.sh
           sudo timeout --kill-after=30s 5m apt-get "${apt_options[@]}" update
           sudo timeout --kill-after=30s 15m apt-get "${apt_options[@]}" install -y \
-            clang-${LLVM_VERSION} lld-${LLVM_VERSION} llvm-${LLVM_VERSION}-dev \
+            "clang-${LLVM_VERSION}" "lld-${LLVM_VERSION}" "llvm-${LLVM_VERSION}-dev" \
             libuv1-dev libgc-dev libffi-dev
 
       - name: Build the selected LLGo compiler
