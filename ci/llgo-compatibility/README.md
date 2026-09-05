@@ -9,6 +9,11 @@ Go and LLGo are intentionally run in separate Bent invocations. A compiler
 failure in one configuration therefore cannot disable the baseline package in
 the other. Test binaries are wrapped with `go tool test2json`, while the native
 Bent stdout and driver logs are retained beside the structured report.
+Each binary has the Go test harness's five-minute timeout plus an independent
+six-minute `timeout` watchdog around `test2json` and the binary. The outer
+deadline also contains hangs after the test harness has printed its final test
+result. Bent records that package as a runner error and continues the remaining
+packages; no package is omitted from the compatibility report.
 
 The checked-in versions are the release comparison contract. Update them in a
 normal reviewable PR; do not replace them with `@latest` in release data.

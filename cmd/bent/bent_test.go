@@ -211,5 +211,10 @@ func TestBent(t *testing.T) {
 		}
 		Bs = Bs[:1] // truncate Bs for remaining configurations
 	}
-
+	cmd = bentCmd(t, "-l", "-C=configurations-llgo-compatibility.toml", "-B=benchmarks-llgo-compatibility.toml")
+	output, err = cmd.CombinedOutput()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%s\n", output)
+		t.Fatal(err)
+	}
 }
